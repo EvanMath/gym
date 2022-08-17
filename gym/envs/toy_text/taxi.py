@@ -65,7 +65,7 @@ class TaxiEnv(Env):
     episode. The missing states correspond to situations in which the passenger
     is at the same location as their destination, as this typically signals the
     end of an episode. Four additional states can be observed right after a
-    successful episodes, when both the passenger and the taxi are at the destination.
+    successful episode, when both the passenger and the taxi are at the destination.
     This gives a total of 404 reachable discrete states.
 
     Each state space is represented by the tuple:
@@ -92,7 +92,7 @@ class TaxiEnv(Env):
     ``step`` and ``reset(return_info=True)`` will return an info dictionary that contains "p" and "action_mask" containing
         the probability that the state is taken and a mask of what actions will result in a change of state to speed up training.
 
-    As Taxi's initial state is a stochastic, the "p" key represents the probability of the
+    As Taxi's initial state is stochastic, the "p" key represents the probability of the
     transition however this value is currently bugged being 1.0, this will be fixed soon.
     As the steps are deterministic, "p" represents the probability of the transition which is always 1.0
 
